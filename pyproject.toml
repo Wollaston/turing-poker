@@ -1,0 +1,22 @@
+[project]
+name = "turing-holdem"
+version = "0.1.0"
+description = "Agentic Poker Playing with a Modal Logic structure."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "loguru>=0.7.3",
+    "pokerkit>=0.7.0",
+    "pydantic>=2.12.5",
+    "typer>=0.20.0",
+]
+
+[project.scripts]
+th = "turing_holdem:cli"
+
+[build-system]
+requires = ["uv_build>=0.9.11,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = ["pytest>=9.0.2"]
