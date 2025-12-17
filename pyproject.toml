@@ -5,10 +5,12 @@ description = "Agentic Poker Playing with a Modal Logic structure."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "loguru>=0.7.3",
-    "pokerkit>=0.7.0",
-    "pydantic>=2.12.5",
-    "typer>=0.20.0",
+  "datasets>=4.4.1",
+  "dspy>=3.0.4",
+  "loguru>=0.7.3",
+  "pokerkit>=0.7.0",
+  "pydantic>=2.12.5",
+  "typer>=0.20.0",
 ]
 
 [project.scripts]

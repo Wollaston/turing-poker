@@ -1,0 +1,285 @@
+{
+  "name": "nine_percent",
+  "simulations": [
+    {
+      "personality": "nine_percent",
+      "hole_cards": "(Kh, 9h)",
+      "preflop": {
+        "street": "Preflop",
+        "board": "()",
+        "hand_strength": 0.25,
+        "action": "check"
+      },
+      "flop": {
+        "street": "Flop",
+        "board": "(2h, 2c, 2d)",
+        "hand_strength": 0.12,
+        "action": "fold"
+      },
+      "turn": {
+        "street": "Turn",
+        "board": "(3d, 2h, 2c, 2d)",
+        "hand_strength": 0.14,
+        "action": "fold"
+      },
+      "river": {
+        "street": "River",
+        "board": "(Kc, 2h, 2c, 3d, 2d)",
+        "hand_strength": 0.59,
+        "action": "raise"
+      }
+    },
+    {
+      "personality": "nine_percent",
+      "hole_cards": "(Qh, Qs)",
+      "preflop": {
+        "street": "Preflop",
+        "board": "()",
+        "hand_strength": 0.27,
+        "action": "check"
+      },
+      "flop": {
+        "street": "Flop",
+        "board": "(9c, 2h, 4d)",
+        "hand_strength": 0.2,
+        "action": "fold"
+      },
+      "turn": {
+        "street": "Turn",
+        "board": "(9c, 9d, 2h, 4d)",
+        "hand_strength": 0.49,
+        "action": "call"
+      },
+      "river": {
+        "street": "River",
+        "board": "(9d, 2h, 4d, Kh, 9c)",
+        "hand_strength": 0.3,
+        "action": "check"
+      }
+    },
+    {
+      "personality": "nine_percent",
+      "hole_cards": "(Ad, 5s)",
+      "preflop": {
+        "street": "Preflop",
+        "board": "()",
+        "hand_strength": 0.21,
+        "action": "check"
+      },
+      "flop": {
+        "street": "Flop",
+        "board": "(Td, 9h, 3s)",
+        "hand_strength": 0.08,
+        "action": "fold"
+      },
+      "turn": {
+        "street": "Turn",
+        "board": "(Td, 9h, 8s, 3s)",
+        "hand_strength": 0.01,
+        "action": "fold"
+      },
+      "river": {
+        "street": "River",
+        "board": "(Td, 9h, 8s, Th, 3s)",
+        "hand_strength": 0.01,
+        "action": "fold"
+      }
+    },
+    {
+      "personality": "nine_percent",
+      "hole_cards": "(Ks, Qc)",
+      "preflop": {
+        "street": "Preflop",
+        "board": "()",
+        "hand_strength": 0.26,
+        "action": "check"
+      },
+      "flop": {
+        "street": "Flop",
+        "board": "(Qh, Qd, Ah)",
+        "hand_strength": 0.45,
+        "action": "call"
+      },
+      "turn": {
+        "street": "Turn",
+        "board": "(Qh, Qd, Ah, 7c)",
+        "hand_strength": 0.83,
+        "action": "all_in"
+      },
+      "river": {
+        "street": "River",
+        "board": "(9h, Ah, Qh, Qd, 7c)",
+        "hand_strength": 0.71,
+        "action": "all_in"
+      }
+    },
+    {
+      "personality": "nine_percent",
+      "hole_cards": "(4d, Qc)",
+      "preflop": {
+        "street": "Preflop",
+        "board": "()",
+        "hand_strength": 0.17,
+        "action": "fold"
+      },
+      "flop": {
+        "street": "Flop",
+        "board": "(Td, Qs, Ad)",
+        "hand_strength": 0.23,
+        "action": "check"
+      },
+      "turn": {
+        "street": "Turn",
+        "board": "(Td, Qs, Ad, Jd)",
+        "hand_strength": 0.07,
+        "action": "fold"
+      },
+      "river": {
+        "street": "River",
+        "board": "(Td, Qs, Ad, 9s, Jd)",
+        "hand_strength": 0.01,
+        "action": "fold"
+      }
+    },
+    {
+      "personality": "nine_percent",
+      "hole_cards": "(Jc, Ad)",
+      "preflop": {
+        "street": "Preflop",
+        "board": "()",
+        "hand_strength": 0.33,
+        "action": "call"
+      },
+      "flop": {
+        "street": "Flop",
+        "board": "(9c, Qd, 9d)",
+        "hand_strength": 0.11,
+        "action": "fold"
+      },
+      "turn": {
+        "street": "Turn",
+        "board": "(9c, Qd, 9d, 5s)",
+        "hand_strength": 0.04,
+        "action": "fold"
+      },
+      "river": {
+        "street": "River",
+        "board": "(Qs, 9d, 9c, Qd, 5s)",
+        "hand_strength": 0.24,
+        "action": "check"
+      }
+    },
+    {
+      "personality": "nine_percent",
+      "hole_cards": "(3h, 5c)",
+      "preflop": {
+        "street": "Preflop",
+        "board": "()",
+        "hand_strength": 0.19,
+        "action": "fold"
+      },
+      "flop": {
+        "street": "Flop",
+        "board": "(8c, 3c, Js)",
+        "hand_strength": 0.2,
+        "action": "fold"
+      },
+      "turn": {
+        "street": "Turn",
+        "board": "(8c, 3c, 2s, Js)",
+        "hand_strength": 0.14,
+        "action": "fold"
+      },
+      "river": {
+        "street": "River",
+        "board": "(9h, Js, 2s, 8c, 3c)",
+        "hand_strength": 0.01,
+        "action": "fold"
+      }
+    },
+    {
+      "personality": "nine_percent",
+      "hole_cards": "(7s, Qc)",
+      "preflop": {
+        "street": "Preflop",
+        "board": "()",
+        "hand_strength": 0.1,
+        "action": "fold"
+      },
+      "flop": {
+        "street": "Flop",
+        "board": "(Kh, 2h, 2d)",
+        "hand_strength": 0.1,
+        "action": "fold"
+      },
+      "turn": {
+        "street": "Turn",
+        "board": "(Kh, 6h, 2h, 2d)",
+        "hand_strength": 0.02,
+        "action": "fold"
+      },
+      "river": {
+        "street": "River",
+        "board": "(2h, 4d, 6h, Kh, 2d)",
+        "hand_strength": 0.01,
+        "action": "fold"
+      }
+    },
+    {
+      "personality": "nine_percent",
+      "hole_cards": "(Ac, 4s)",
+      "preflop": {
+        "street": "Preflop",
+        "board": "()",
+        "hand_strength": 0.2,
+        "action": "check"
+      },
+      "flop": {
+        "street": "Flop",
+        "board": "(4h, Jc, 6c)",
+        "hand_strength": 0.23,
+        "action": "check"
+      },
+      "turn": {
+        "street": "Turn",
+        "board": "(9c, 4h, Jc, 6c)",
+        "hand_strength": 0.27,
+        "action": "check"
+      },
+      "river": {
+        "street": "River",
+        "board": "(4h, Jc, 9c, 2s, 6c)",
+        "hand_strength": 0.04,
+        "action": "fold"
+      }
+    },
+    {
+      "personality": "nine_percent",
+      "hole_cards": "(Qd, 9s)",
+      "preflop": {
+        "street": "Preflop",
+        "board": "()",
+        "hand_strength": 0.2,
+        "action": "fold"
+      },
+      "flop": {
+        "street": "Flop",
+        "board": "(Qh, 5d, Kd)",
+        "hand_strength": 0.3,
+        "action": "call"
+      },
+      "turn": {
+        "street": "Turn",
+        "board": "(Qh, 5d, Kd, Js)",
+        "hand_strength": 0.29,
+        "action": "check"
+      },
+      "river": {
+        "street": "River",
+        "board": "(5d, Js, Qh, Kd, 4c)",
+        "hand_strength": 0.28,
+        "action": "check"
+      }
+    }
+  ]
+}
