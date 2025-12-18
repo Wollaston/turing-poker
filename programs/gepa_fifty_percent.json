@@ -1,0 +1,149 @@
+{
+  "preflop_module.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "python\n# Task: Poker Hand Evaluator\n\n# Input Format:\n# - personality: A string describing the player's personality, such as 'tight-aggressive', 'loose-passive', or 'fifty_percent'.\n# - hole_cards: A tuple of two cards, each represented as a string (e.g., 'As' for Ace of Spades).\n# - board: A tuple of five cards, each represented as a string (e.g., 'Qs Js 4c 2s 3s' for the board 'Queen of Spades, Jack of Spades, 4 of Clubs, 2 of Spades, 3 of Spades').\n# - street: A string indicating the current street of the game, such as 'Preflop', 'Flop', 'Turn', or 'River'.\n\n# Task Description:\n# Evaluate a given poker hand and determine the best action based on the player's personality, hole cards, board, and current street.\n\n# Domain-Specific Factual Information:\n# - In poker, a 'tight-aggressive' player tends to play strong hands and fold weak hands, while a 'loose-passive' player tends to play more hands and fold less often.\n# - A 'fifty_percent' player plays around 50% of their hands, which is a balanced range of hands.\n# - The strength of a hand is determined by the ranking of the cards, with Ace being the highest and 2 being the lowest.\n# - The board is the community cards that are shared by all players, and it can affect the strength of a hand.\n# - The current street of the game determines the number of community cards that have been dealt and the betting structure.\n# - Preflop, players should consider building the pot with strong hands and folding weak hands to minimize losses.\n# - On the Flop, Turn, or River, players should consider playing stronger hands to protect their hand and build the pot.\n# - When the board is empty, players should consider the strength of their hole cards and the current street to make a decision.\n\n# Generalizable Strategy:\n# - The assistant should use a decision tree or a set of rules to evaluate the hand and determine the best action based on the player's personality and the current game state.\n# - The assistant should consider the strength of the hand, the board, and the current street to make a decision.\n\n# New Instructions:\n# 1. Review the given poker hand and determine the best action based on the player's personality, hole cards, board, and current street.\n# 2. Use a decision tree or a set of rules to evaluate the hand and determine the best action.\n# 3. Consider the strength of the hand, the board, and the current street to make a decision.\n# 4. If the player is 'tight-aggressive', play strong hands and fold weak hands, especially preflop.\n# 5. If the player is 'loose-passive', play more hands and fold less often, but still consider the strength of the hand and the board.\n# 6. If the player is 'fifty_percent', play around 50% of their hands, which is a balanced range of hands.\n# 7. If the board is strong, consider playing a stronger hand to build the pot.\n# 8. If the current street is 'Preflop', consider building the pot with strong hands and folding weak hands to minimize losses.\n# 9. If the current street is 'Flop', 'Turn', or 'River', consider playing stronger hands to protect your hand and build the pot.\n# 10. When the board is empty, consider the strength of the hole cards and the current street to make a decision.\n# 11. If the hand is relatively weak, consider folding to minimize losses.\n# 12. If the hand is relatively strong, consider building the pot to maximize winnings.\n```\n\n```python\n# Example 1\n## Inputs\n### personality\ntight-aggressive\n\n### hole_cards\n(9h, Ac)\n\n### board\n()\n\n### street\nPreflop\n\n## Generated Outputs\n### reasoning\nSince the player is 'tight-aggressive', they tend to play strong hands and fold weak hands. With a strong hand like (9h, Ac) in the preflop stage, it's a good idea to build the pot and put pressure on the other players. However, since the board is empty, there's no additional information to consider yet.\n\n### action\nraise\n\n## Feedback\nYou made the correct 'raise' action for this hand and board.\n\n\n# Example 2\n## Inputs\n### personality\nfifty_percent\n\n### hole_cards\n(9s, 6c)\n\n### board\n()\n\n### street\nPreflop\n\n## Generated Outputs\n### reasoning\nSince the player is 'fifty_percent', they play around 50% of their hands. With hole cards (9s, 6c) and no board yet, it's a relatively weak hand. Preflop, the player should consider folding weak hands to minimize losses, but since they're 'fifty_percent', they might choose to call to see a few more cards.\n\n### action\ncall\n\n## Feedback\nYou made the correct 'call' action for this hand and board.\n\n\n# Example 3\n## Inputs\n### personality\nloose-passive\n\n### hole_cards\n(Jc, 2d)\n\n### board\n()\n\n### street\nPreflop\n\n## Generated Outputs\n### reasoning\nSince the player is 'loose-passive', they tend to play more hands and fold less often. Given the hole cards (Jc, 2d) and the board (), the hand is relatively weak. Preflop, it's likely that the player will call to see more cards.\n\n### action\ncall\n\n## Feedback\nYou made the correct 'call' action for this hand and board.",
+      "fields": [
+        {
+          "prefix": "Personality:",
+          "description": "${personality}"
+        },
+        {
+          "prefix": "Hole Cards:",
+          "description": "${hole_cards}"
+        },
+        {
+          "prefix": "Street:",
+          "description": "${street}"
+        },
+        {
+          "prefix": "Board:",
+          "description": "${board}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Action:",
+          "description": "${action}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "flop_module.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "python\n# Task: Determine the Best Action in a Poker Hand\n\n# Input Format:\n# - personality: A string describing the player's personality, e.g., 'fifty_percent', 'tight-aggressive', etc.\n# - hole_cards: A tuple of two strings representing the player's hole cards, e.g., ('4h', 'Ac')\n# - board: A tuple of strings representing the community cards on the board, e.g., ('Qc', 'Qs', '8c', '3d')\n# - street: A string describing the current street of the game, e.g., 'Turn', 'River', 'Preflop'\n\n# Task Description:\n# The task is to determine the best action for a given poker hand based on the player's personality, hole cards, board, and current street.\n\n# Domain-Specific Factual Information:\n# - A 'fifty_percent' player is a tight-aggressive player who aims to maximize their expected value.\n# - A 'tight-aggressive' player is a player who plays strong hands aggressively but folds weak hands.\n# - In poker, the streets are: Preflop (before the flop), Flop (after the flop), Turn (after the turn), and River (after the river).\n# - A flush draw is a hand that has a chance to make a flush, which is a hand with five cards of the same suit.\n# - A strong hand is a hand that has a high chance of winning, e.g., a pair, a straight, or a flush.\n# - A weak hand is a hand that has a low chance of winning, e.g., a high card or a low pair.\n# - A possible straight draw is a hand that has a chance to make a straight, which is a hand with five cards in sequential order (e.g., 3-4-5-6-7).\n# - A high pair is a pair with a high value (e.g., Ace-Ace, King-King).\n# - A low pair is a pair with a low value (e.g., 2-2, 3-3).\n# - A high card is a hand with no pairs or runs, but with a high value card (e.g., Ace, King, Queen).\n\n# Generalizable Strategy:\n# The assistant should use a decision tree or a rule-based system to determine the best action based on the input parameters.\n# The decision tree should consider the player's personality, hole cards, board, and current street to determine the best action.\n# The assistant should also consider the following rules:\n# - If the player has a strong hand, consider raising or betting to maximize the pot.\n# - If the player has a weak hand, consider folding to minimize losses.\n# - If the player has a flush draw, consider calling or raising to build the pot.\n# - If the player is on the preflop street, consider raising or calling to build the pot.\n# - If the player is on the flop street, consider checking or betting to build the pot.\n# - If the player is on the turn street, consider checking or betting to build the pot.\n# - If the player is on the river street, consider checking or betting to build the pot.\n# - If the player has a possible straight draw, consider calling or raising to build the pot.\n# - If the player has a high pair, consider raising to build the pot.\n# - If the player has a low pair, consider calling to build the pot.\n# - If the player has a high card, consider folding to minimize losses.\n\n# Instruction:\n# 1. Read the input parameters carefully and identify the player's personality, hole cards, board, and current street.\n# 2. Use a decision tree or a rule-based system to determine the best action based on the input parameters.\n# 3. Consider the player's personality and adjust the decision tree accordingly.\n# 4. Evaluate the player's hand and determine if it is a strong hand, weak hand, flush draw, possible straight draw, high pair, low pair, or high card.\n# 5. Based on the player's hand and the current street, determine the best action to take.\n# 6. If the player has a strong hand, consider raising or betting to maximize the pot.\n# 7. If the player has a weak hand, consider folding to minimize losses.\n# 8. If the player has a flush draw, consider calling or raising to build the pot.\n# 9. If the player is on the preflop street, consider raising or calling to build the pot.\n# 10. If the player is on the flop street, consider checking or betting to build the pot.\n# 11. If the player is on the turn street, consider checking or betting to build the pot.\n# 12. If the player is on the river street, consider checking or betting to build the pot.\n# 13. If the player has a possible straight draw, consider calling or raising to build the pot.\n# 14. If the player has a high pair, consider raising to build the pot.\n# 15. If the player has a low pair, consider calling to build the pot.\n# 16. If the player has a high card, consider folding to minimize losses.\n# 17. Provide a clear and concise reasoning for the best action.\n# 18. Return the best action and the reasoning as output.\n\n# Output Format:\n# - action: A string describing the best action, e.g., 'raise', 'call', 'fold', etc.\n# - reasoning: A string describing the reasoning behind the best action.",
+      "fields": [
+        {
+          "prefix": "Personality:",
+          "description": "${personality}"
+        },
+        {
+          "prefix": "Hole Cards:",
+          "description": "${hole_cards}"
+        },
+        {
+          "prefix": "Street:",
+          "description": "${street}"
+        },
+        {
+          "prefix": "Board:",
+          "description": "${board}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Action:",
+          "description": "${action}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "turn_module.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "python\n# Task Instruction\n\n## Task Description\nThe task is to determine the best action for a given Poker Hand, considering the player's personality and the current state of the game.\n\n## Input Format\nThe input will consist of the following parameters:\n\n* `personality`: A string describing the player's personality, such as \"fifty_percent\", \"aggressive\", or \"passive\".\n* `hole_cards`: A tuple of two cards representing the player's hole cards, in the format (rank, suit).\n* `board`: A tuple of five cards representing the current state of the board, in the format (rank, suit).\n* `street`: A string indicating the current street of the game, such as \"Pre-Flop\", \"Flop\", \"Turn\", or \"River\".\n\n## Task Requirements\nThe assistant should use the following strategies to determine the best action:\n\n* Consider the player's personality and adjust the decision-making process accordingly.\n* Evaluate the strength of the player's hand and the potential for improvement based on the board cards.\n* Consider the potential actions of the opponent and the likelihood of them improving their hand.\n* Use a risk-averse approach for players with a \"fifty_percent\" personality, and a more aggressive approach for players with an \"aggressive\" personality.\n\n## Domain-Specific Factual Information\n* In Poker, the goal is to make the best five-card hand possible using any combination of the player's hole cards and the board cards.\n* The strength of a hand is determined by the ranking of the cards, with higher-ranking cards being stronger.\n* A straight draw is a hand that has the potential to improve to a straight, which is a strong hand.\n* A flush draw is a hand that has the potential to improve to a flush, which is a strong hand.\n* The turn and river streets are critical points in the game, as they can significantly improve or ruin a hand.\n\n## Generalizable Strategy\nThe assistant should use a decision tree or a similar algorithm to evaluate the player's hand and the board cards, and determine the best action based on the player's personality and the game state.\n\n## Evaluation Criteria\nThe assistant's responses will be evaluated based on the correctness of the action and the quality of the reasoning provided.\n\n## Example Inputs and Feedback\nThe following examples demonstrate the input format and the expected output:\n\n* Example 1:\n        + Inputs: `personality=\"fifty_percent\"`, `hole_cards=(9c, 6h)`, `board=(Qs, 6d, 7s, Th, 5h)`, `street=\"River\"`\n        + Feedback: \"You made the correct 'call' action for this hand and board.\"\n* Example 2:\n        + Inputs: `personality=\"fifty_percent\"`, `hole_cards=(5h, 8s)`, `board=(Kh, 7s, Jc, Ac)`, `street=\"Turn\"`\n        + Feedback: \"You made the incorrect 'fold' action for this hand and board. The correct action is 'check'.\"\n* Example 3:\n        + Inputs: `personality=\"fifty_percent\"`, `hole_cards=(2s, 3h)`, `board=(7h, Kd, 3c, Th)`, `street=\"Turn\"`\n        + Feedback: \"You made the incorrect 'fold' action for this hand and board. The correct action is 'call'.\"\n\n## Task Goals\nThe primary goal of this task is to develop an assistant that can determine the best action for a given Poker Hand, considering the player's personality and the current state of the game. The secondary goal is to evaluate the assistant's responses based on the correctness of the action and the quality of the reasoning provided.",
+      "fields": [
+        {
+          "prefix": "Personality:",
+          "description": "${personality}"
+        },
+        {
+          "prefix": "Hole Cards:",
+          "description": "${hole_cards}"
+        },
+        {
+          "prefix": "Street:",
+          "description": "${street}"
+        },
+        {
+          "prefix": "Board:",
+          "description": "${board}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Action:",
+          "description": "${action}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "river_module.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "python\n# Task Instruction\n\n## Task Description\nThe task is to determine the best action for a given Poker Hand, considering the player's personality, hole cards, board cards, and the current street.\n\n## Input Format\nThe input will be in the following format:\n- `personality`: A string describing the player's personality (e.g., 'fifty_percent', 'tight', 'loose', etc.)\n- `hole_cards`: A tuple of two strings representing the player's hole cards (e.g., ('6h', '5d'))\n- `board`: A tuple of five strings representing the board cards (e.g., ('4h', 'Kh', '6d', 'Jh', '6c'))\n- `street`: A string representing the current street (e.g., 'River', 'Flop', 'Turn')\n\n## Task Requirements\nThe assistant should analyze the input and provide a clear and concise reasoning for the best action to take. The action should be one of the following:\n- `call`\n- `raise`\n- `all_in`\n- `check`\n- `fold`\n\n## Domain-Specific Factual Information\n- A set of sixes is a decent hand in Poker.\n- A king on the board can be a strong hand for someone else.\n- On the river, it's generally a good idea to be cautious and not overplay a hand.\n- A broadway draw with a possible flush draw on the board can be a strong hand.\n- A weak hand with a possible draw on the board can be a good reason to check.\n- A tight player likes to minimize losses and avoid risk.\n- A loose player likes to maximize their expected value and take risks.\n\n## Generalizable Strategy\nThe assistant should consider the following generalizable strategy:\n- Analyze the player's personality and adjust the strategy accordingly.\n- Evaluate the strength of the player's hand and the board cards.\n- Consider the potential strength of the opponent's hand.\n- Make a decision based on the player's personality, hand strength, and potential opponent strength.\n\n## Evaluation Criteria\nThe assistant's response will be evaluated based on the following criteria:\n- Correctness: Is the action taken correct based on the input and the generalizable strategy?\n- Reasoning: Is the reasoning provided clear and concise?\n- Adaptability: Does the assistant adapt to different player personalities and hand strengths?",
+      "fields": [
+        {
+          "prefix": "Personality:",
+          "description": "${personality}"
+        },
+        {
+          "prefix": "Hole Cards:",
+          "description": "${hole_cards}"
+        },
+        {
+          "prefix": "Street:",
+          "description": "${street}"
+        },
+        {
+          "prefix": "Board:",
+          "description": "${board}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Action:",
+          "description": "${action}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.13",
+      "dspy": "3.0.4",
+      "cloudpickle": "3.1"
+    }
+  }
+}

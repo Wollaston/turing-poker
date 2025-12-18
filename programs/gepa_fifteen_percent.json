@@ -1,0 +1,149 @@
+{
+  "preflop_module.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "python\n# Task Instruction\n\n## Task Description\nThe task is to determine the best action in a given Poker Hand scenario. The inputs will include the player's personality, hole cards, the current board state, and the current street. The assistant should provide a reasoning for the chosen action and the action itself.\n\n## Input Format\nThe input will be in the following format:\n- personality: A string representing the player's personality (e.g., 'tight', 'aggressive', etc.)\n- hole_cards: A tuple of two cards representing the player's hole cards (e.g., ('5s', 'Jc'))\n- board: A tuple of five cards representing the current board state (e.g., ('9s', '7d', 'Ad', '5h', ''))\n- street: A string representing the current street (e.g., 'Turn', 'River', 'Preflop')\n\n## Task Requirements\n1. The assistant should consider the player's personality when making the decision.\n2. The assistant should analyze the hole cards and the board state to determine the best action.\n3. The assistant should provide a clear and concise reasoning for the chosen action.\n4. The assistant should choose the correct action based on the given scenario.\n\n## Domain-Specific Factual Information\n- In Poker, a 'tight' player is someone who plays fewer hands and is more selective.\n- A 'pair' is a hand with two cards of the same rank.\n- A 'flush' is a hand with five cards of the same suit.\n- A 'straight' is a hand with five cards of sequential rank.\n- The 'Preflop' street is the first street in a Poker hand, where players can choose to call, raise, or fold.\n- The 'Turn' street is the fourth street in a Poker hand, where players can choose to check, bet, or fold.\n- The 'River' street is the fifth and final street in a Poker hand, where players can choose to check, bet, or fold.\n\n## Generalizable Strategy\nThe assistant should use a decision-making strategy that considers the player's personality, the strength of the hole cards, and the board state. The assistant should also consider the potential draws and the opponent's possible actions.\n\n## Evaluation Criteria\nThe assistant's response will be evaluated based on the following criteria:\n- Correctness: Is the chosen action correct based on the given scenario?\n- Reasoning: Is the provided reasoning clear and concise?\n- Personality consideration: Does the assistant consider the player's personality when making the decision?\n- Domain knowledge: Does the assistant demonstrate a good understanding of Poker concepts and terminology?",
+      "fields": [
+        {
+          "prefix": "Personality:",
+          "description": "${personality}"
+        },
+        {
+          "prefix": "Hole Cards:",
+          "description": "${hole_cards}"
+        },
+        {
+          "prefix": "Street:",
+          "description": "${street}"
+        },
+        {
+          "prefix": "Board:",
+          "description": "${board}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Action:",
+          "description": "${action}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "flop_module.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "Review the folling Poker Hand and determine the best action.",
+      "fields": [
+        {
+          "prefix": "Personality:",
+          "description": "${personality}"
+        },
+        {
+          "prefix": "Hole Cards:",
+          "description": "${hole_cards}"
+        },
+        {
+          "prefix": "Street:",
+          "description": "${street}"
+        },
+        {
+          "prefix": "Board:",
+          "description": "${board}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Action:",
+          "description": "${action}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "turn_module.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "python\n# Task Instruction\n\n## Task Description\nThe task is to determine the best action for a given poker hand based on the player's personality, hole cards, board cards, and current street.\n\n## Input Format\nThe input will be a dictionary with the following keys:\n- `personality`: a string describing the player's personality (e.g., 'tight', 'aggressive', etc.)\n- `hole_cards`: a tuple of two cards representing the player's hole cards (e.g., '(7s, 5s)')\n- `board`: a tuple of five cards representing the community board (e.g., '(Ks, Jh, 3h, 6c)')\n- `street`: a string indicating the current street (e.g., 'Turn', 'Flop', etc.)\n\n## Task Requirements\nThe assistant should analyze the input data and provide a recommendation for the best action to take, including a brief explanation of the reasoning behind the decision.\n\n## Domain-Specific Factual Information\n- In poker, a \"tight\" player is someone who only plays strong hands, while an \"aggressive\" player is someone who likes to take risks and play more hands.\n- A \"straight draw\" is a hand that has a chance to become a straight (five cards in sequential order) with the next card.\n- A \"flush draw\" is a hand that has a chance to become a flush (five cards of the same suit) with the next card.\n- The \"board\" refers to the community cards that are shared by all players.\n- The \"street\" refers to the current stage of the hand, with the \"Flop\" being the first three community cards, the \"Turn\" being the fourth community card, and the \"River\" being the fifth and final community card.\n\n## Generalizable Strategies\n- A tight player should be cautious and only play strong hands.\n- An aggressive player should be willing to take risks and play more hands.\n- A player with a possible draw should consider the odds of improving their hand and the potential risks of losing to a stronger hand.\n- A player with a strong hand should consider the potential risks of losing to a stronger hand and the potential rewards of winning.\n\n## Evaluation Criteria\nThe assistant's response will be evaluated based on the accuracy of the recommended action and the clarity of the explanation.\n\n## Example Inputs and Feedback\nThe following are examples of input data and feedback:\n```\n# Example 1\n## Inputs\n### personality\ntight\n\n### hole_cards\n(7s, 5s)\n\n### board\n(Ks, Jh, 3h, 6c)\n\n### street\nTurn\n\n## Feedback\nYou made the incorrect 'call' action for this hand and board. The correct action is 'fold'. Think about how you could have reasoned to make the correct decision with your hand and the board cards.\n\n# Example 2\n## Inputs\n### personality\naggressive\n\n### hole_cards\n(Kd, 5c)\n\n### board\n(Kc, 8d, 3d)\n\n### street\nFlop\n\n## Feedback\nYou made the incorrect 'call' action for this hand and board. The correct action is 'all_in'. Think about how you could have reasoned to make the correct decision with your hand and the board cards.\n\n# Example 3\n## Inputs\n### personality\ntight\n\n### hole_cards\n(9c, 6s)\n\n### board\n(5d, 6h, Js)\n\n### street\nFlop\n\n## Feedback\nYou made the incorrect 'call' action for this hand and board. The correct action is 'fold'. Think about how you could have reasoned to make the correct decision with your hand and the board cards.",
+      "fields": [
+        {
+          "prefix": "Personality:",
+          "description": "${personality}"
+        },
+        {
+          "prefix": "Hole Cards:",
+          "description": "${hole_cards}"
+        },
+        {
+          "prefix": "Street:",
+          "description": "${street}"
+        },
+        {
+          "prefix": "Board:",
+          "description": "${board}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Action:",
+          "description": "${action}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "river_module.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "python\n# Task Instruction\n\n## Task Description\nThe task is to determine the best action for a given poker hand based on the provided inputs. The inputs include the player's personality, their hole cards, the community board, and the current street.\n\n## Input Format\nThe input format is as follows:\n- `personality`: A string representing the player's personality, which can be one of the following: 'tight', 'loose', 'aggressive', 'passive', or 'fifteen_percent' (a custom personality type).\n- `hole_cards`: A tuple of two strings representing the player's hole cards, each in the format 'rank-suit' (e.g., 'Ac' for Ace of clubs).\n- `board`: A tuple of five strings representing the community board, each in the format 'rank-suit' (e.g., '2c' for 2 of clubs).\n- `street`: A string representing the current street, which can be one of the following: 'Pre-Flop', 'Flop', 'Turn', or 'River'.\n\n## Task Requirements\nThe task requires the assistant to analyze the given inputs and determine the best action for the player. The action can be one of the following: 'call', 'raise', 'fold', or 'check'.\n\n## Domain-Specific Factual Information\n- A 'tight' personality type tends to fold weak hands and play strong hands aggressively.\n- A 'loose' personality type tends to play more hands and be more aggressive.\n- An 'aggressive' personality type tends to play strong hands aggressively and fold weak hands.\n- A 'passive' personality type tends to fold weak hands and play strong hands conservatively.\n- The 'fifteen_percent' personality type is a custom type that tends to be cautious and minimize losses.\n- A flush draw is a strong draw that can win the hand if made.\n- A straight draw is a strong draw that can win the hand if made.\n- A set is a strong hand that can win the hand if made.\n- A possible straight draw or flush draw on the board can make the player's hand vulnerable to being dominated.\n- A strong card on the board can make the player's hand vulnerable to being dominated.\n- When the player has a strong hand, they should consider the strength of the community board and the possible draws that can be made.\n- When the player has a weak hand, they should consider the strength of the community board and the possible draws that can be made, and fold if the hand is not strong enough to win.\n- On the River, the player should be cautious and minimize their losses by folding if they do not have a strong hand.\n- A player with a fifteen_percent personality type should be cautious and minimize losses by folding if they do not have a strong hand.\n\n## Generalizable Strategy\nThe generalizable strategy for this task is to analyze the player's personality, their hole cards, and the community board to determine the best action. The assistant should consider the following factors:\n- The player's personality and how it affects their playing style.\n- The strength of the player's hole cards and how they relate to the community board.\n- The strength of the community board and any possible draws or strong hands that can be made.\n- The current street and how it affects the player's decision-making.\n\n## Evaluation Criteria\nThe assistant's response will be evaluated based on the following criteria:\n- Accuracy: Does the assistant's response accurately reflect the best action for the given inputs?\n- Reasoning: Does the assistant's response provide clear and logical reasoning for their decision?\n- Domain knowledge: Does the assistant demonstrate a good understanding of poker concepts and terminology?\n\n## Additional Considerations\n- The assistant should consider the possible draws that can be made on the board and how they affect the player's hand.\n- The assistant should consider the strength of the community board and how it affects the player's hand.\n- The assistant should consider the current street and how it affects the player's decision-making.\n- The assistant should be cautious and minimize losses when the player has a weak hand.\n- The assistant should be aggressive and play strong hands when the player has a strong hand.",
+      "fields": [
+        {
+          "prefix": "Personality:",
+          "description": "${personality}"
+        },
+        {
+          "prefix": "Hole Cards:",
+          "description": "${hole_cards}"
+        },
+        {
+          "prefix": "Street:",
+          "description": "${street}"
+        },
+        {
+          "prefix": "Board:",
+          "description": "${board}"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Action:",
+          "description": "${action}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.13",
+      "dspy": "3.0.4",
+      "cloudpickle": "3.1"
+    }
+  }
+}
