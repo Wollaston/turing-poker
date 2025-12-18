@@ -1,0 +1,53 @@
+Resolved 94 packages in 41ms
+   Building turing-holdem @ file:///data/matthewflynn/poker
+      Built turing-holdem @ file:///data/matthewflynn/poker
+Prepared 1 package in 237ms
+Uninstalled 1 package in 10ms
+Installed 1 package in 17ms
+ ~ turing-holdem==0.1.0 (from file:///data/matthewflynn/poker)
+2025-12-18 02:35:39.994 | INFO     | turing_holdem.poker:play:86 - Hand 1
+2025-12-18 02:35:39.994 | INFO     | turing_holdem.poker:hand:94 - Street: Preflop
+2025-12-18 02:35:44.431 | INFO     | turing_holdem.poker:hand:119 - Player Noah Williams called.
+2025-12-18 02:35:46.984 | INFO     | turing_holdem.poker:hand:128 - Player Oliver Miller checked.
+2025-12-18 02:35:50.038 | INFO     | turing_holdem.poker:hand:119 - Player Oliver Smith called.
+2025-12-18 02:35:52.519 | INFO     | turing_holdem.poker:hand:137 - Player Elijah Garcia folded.
+2025-12-18 02:35:52.520 | INFO     | turing_holdem.poker:hand:94 - Street: Flop
+2025-12-18 02:35:55.228 | INFO     | turing_holdem.poker:hand:119 - Player Oliver Smith called.
+2025-12-18 02:35:55.229 | INFO     | turing_holdem.poker:hand:94 - Street: Turn
+2025-12-18 02:35:57.136 | INFO     | turing_holdem.poker:hand:128 - Player Liam Miller checked.
+2025-12-18 02:36:00.968 | INFO     | turing_holdem.poker:hand:128 - Player Noah Williams checked.
+2025-12-18 02:36:04.030 | INFO     | turing_holdem.poker:hand:108 - Player Oliver Miller raised.
+2025-12-18 02:36:07.653 | INFO     | turing_holdem.poker:hand:137 - Player Oliver Smith folded.
+2025-12-18 02:36:07.663 | INFO     | turing_holdem.poker:hand:94 - Street: River
+2025-12-18 02:36:07.663 | INFO     | turing_holdem.poker:play:86 - Hand 2
+2025-12-18 02:36:07.664 | INFO     | turing_holdem.poker:hand:94 - Street: Preflop
+2025-12-18 02:36:10.381 | INFO     | turing_holdem.poker:hand:119 - Player Noah Williams called.
+2025-12-18 02:36:12.772 | INFO     | turing_holdem.poker:hand:119 - Player Oliver Miller called.
+2025-12-18 02:36:15.228 | INFO     | turing_holdem.poker:hand:108 - Player Oliver Smith raised.
+2025-12-18 02:36:17.577 | INFO     | turing_holdem.poker:hand:137 - Player Elijah Garcia folded.
+2025-12-18 02:36:17.578 | INFO     | turing_holdem.poker:hand:94 - Street: Flop
+2025-12-18 02:36:21.085 | INFO     | turing_holdem.poker:hand:119 - Player Noah Williams called.
+2025-12-18 02:36:22.919 | INFO     | turing_holdem.poker:hand:128 - Player Oliver Miller checked.
+2025-12-18 02:36:25.682 | INFO     | turing_holdem.poker:hand:108 - Player Oliver Smith raised.
+2025-12-18 02:36:25.683 | INFO     | turing_holdem.poker:hand:94 - Street: Turn
+2025-12-18 02:36:29.095 | INFO     | turing_holdem.poker:hand:108 - Player Noah Williams raised.
+2025-12-18 02:36:31.533 | INFO     | turing_holdem.poker:hand:128 - Player Oliver Miller checked.
+2025-12-18 02:36:35.004 | INFO     | turing_holdem.poker:hand:108 - Player Oliver Smith raised.
+2025-12-18 02:36:35.004 | INFO     | turing_holdem.poker:hand:94 - Street: River
+2025-12-18 02:36:38.644 | INFO     | turing_holdem.poker:hand:128 - Player Noah Williams checked.
+2025-12-18 02:36:41.412 | INFO     | turing_holdem.poker:hand:108 - Player Oliver Miller raised.
+2025-12-18 02:36:44.491 | INFO     | turing_holdem.poker:hand:119 - Player Oliver Smith called.
+2025-12-18 02:36:44.506 | INFO     | turing_holdem.poker:play:86 - Hand 3
+2025-12-18 02:36:44.506 | INFO     | turing_holdem.poker:hand:94 - Street: Preflop
+2025-12-18 02:36:47.126 | INFO     | turing_holdem.poker:hand:108 - Player Noah Williams raised.
+2025-12-18 02:36:48.995 | INFO     | turing_holdem.poker:hand:119 - Player Oliver Miller called.
+2025-12-18 02:36:52.179 | INFO     | turing_holdem.poker:hand:119 - Player Oliver Smith called.
+2025-12-18 02:36:54.711 | INFO     | turing_holdem.poker:hand:108 - Player Elijah Garcia raised.
+2025-12-18 02:36:54.711 | INFO     | turing_holdem.poker:hand:94 - Street: Flop
+2025-12-18 02:36:57.163 | INFO     | turing_holdem.poker:hand:128 - Player Liam Miller checked.
+2025-12-18 02:37:00.316 | INFO     | turing_holdem.poker:hand:128 - Player Noah Williams checked.
+2025-12-18 02:37:02.215 | INFO     | turing_holdem.poker:hand:128 - Player Oliver Miller checked.
+2025-12-18 02:37:06.175 | INFO     | turing_holdem.poker:hand:128 - Player Oliver Smith checked.
+2025-12-18 02:37:09.582 | INFO     | turing_holdem.poker:hand:119 - Player Elijah Garcia called.
+2025-12-18 02:37:09.583 | INFO     | turing_holdem.poker:hand:94 - Street: Turn
+2025-12-18 02:37:09.603 | INFO     | turing_holdem.poker:hand:94 - Street: River
