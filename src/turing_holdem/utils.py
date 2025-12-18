@@ -1,14 +1,10 @@
 import random
 from enum import Enum
 
+from loguru import logger
 import pokerkit
 from pydantic import BaseModel, ConfigDict, computed_field
 from pokerkit import parse_range
-
-
-class PlayerState(str, Enum):
-    ACTIVE = "Active"
-    FOLDED = "Folder"
 
 
 class Action(str, Enum):
@@ -17,6 +13,22 @@ class Action(str, Enum):
     RAISE = "raise"
     FOLD = "fold"
     ALL_IN = "all_in"
+
+    @classmethod
+    def from_str(cls, action: str) -> "Action":
+        if action == "check":
+            return Action.CHECK
+        elif action == "call":
+            return Action.CALL
+        elif action == "raise":
+            return Action.RAISE
+        elif action == "fold":
+            return Action.FOLD
+        elif action == "all_in":
+            return Action.ALL_IN
+        else:
+            logger.error(f"Invalid action provided: {action}. Defaulting to FOLD.")
+            return Action.FOLD
 
 
 class Personality(BaseModel):
